@@ -26,12 +26,33 @@ class AppTest {
         BufferedReader br = new BufferedReader(new InputStreamReader(url_open.getInputStream()));
 
         String link;
+        String totalLink = "";
+        ArrayList<String> links = new ArrayList<>();
         while ((link = br.readLine()) != null) {
-            System.out.println(link);
+            //System.out.println(link);
+            totalLink+=link;
         }
-        br.close();
+        int pos;
+        int i = 0;
+        while (i < totalLink.length()-10) {
+            if (totalLink.substring(i, i + 5).equals(".html")) {
+                pos = i;
+                while (!(totalLink.substring(pos-5, pos).equals("https"))) {
+                    if (pos <= 5) {
+                        break;
+                    }
+                    pos--;
+                }
+                links.add(totalLink.substring(pos-5, i+5));
+            }
+            i++;
+        }
 
         System.out.println("Done");
+        for (String temp : links) {
+            System.out.println("Link: " + temp);
+        }
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
