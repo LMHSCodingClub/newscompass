@@ -52,6 +52,20 @@ class AppTest {
         for (String temp : links) {
             System.out.println("Link: " + temp);
         }
+        /*
+        for (int j = 0; j < links.size(); j++) {
+            URL url_story = new URL(links.get(j));
+            //URLConnection story_open = url_story.openConnection();
+
+            BufferedReader br_story = new BufferedReader(new InputStreamReader(url_story.openStream()));
+
+            String link_story;
+            while((link_story = br_story.readLine()) != null) {
+                System.out.println(link_story);
+            }
+            System.out.println("\n\n");
+        }
+        */
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
