@@ -7,18 +7,14 @@ import javax.swing.JFrame;
  */
 public final class App extends JFrame {
     private App() {
-        setExtendedState(JFrame.MAXIMIZED_BOTH); 
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setTitle("NewsCompass");
     }
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        new App();
+        NewsRequest r = new NewsRequest("https://api.nytimes.com/svc/topstories/v2/home.json?api-key=lWfWKkSRD6wWl9PvgxjkZ5bs2KYtLBMF");
+
     }
 }
