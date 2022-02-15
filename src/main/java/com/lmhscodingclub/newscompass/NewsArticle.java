@@ -1,5 +1,5 @@
 package com.lmhscodingclub.newscompass;
 
-public class NewsArticle {
+public record NewsArticle (String title, String url, NewsSource newspaper) {
 
 }

@@ -1,10 +1,8 @@
 package com.lmhscodingclub.newscompass;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.util.*;
-import java.io.*;
-import java.net.*;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
