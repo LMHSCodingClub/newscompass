@@ -1,24 +1,44 @@
 package com.lmhscodingclub.newscompass;
 
-import javax.swing.JFrame;
-import javax.swing.JTextField;
+import java.awt.GridLayout;
 
-import java.awt.FlowLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 /**
- * Hello world!
+ *
  */
 public final class App extends JFrame {
     private App() {
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setSize(1000, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setTitle("NewsCompass");
 
-        JTextField textField = new JTextField("Search news");
-        textField.setBounds(10, 10, 100, 20);
+        // JTextField textField = new JTextField("Search news");
+        // textField.setBounds(10, 10, 100, 20);
 
-        add(textField);
+        GridLayout storyGrid = new GridLayout(0, 3);
+        JPanel storyUi = new JPanel(storyGrid);
+
+        storyUi.setBorder(new EmptyBorder(10, 10, 10, 10));
+
+        storyUi.add(politicalBiasLabel("Left"));
+        storyUi.add(politicalBiasLabel("Center"));
+        storyUi.add(politicalBiasLabel("Right"));
+
+
+        add(storyUi);
+
+        // add(textField);
+    }
+
+    private JLabel politicalBiasLabel(String bias) {
+        JLabel label = new JLabel(bias);
+        label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        return label;
     }
 
     public static void main(String[] args) {
